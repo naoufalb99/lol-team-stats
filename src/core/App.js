@@ -6,6 +6,10 @@ import { CssBaseline } from '@material-ui/core'
 import ROUTES from '../constants/routes'
 import PrivateRoutesWrapper from './PrivateRoutesWrapper'
 
+const DefaultLayout = React.lazy(() =>
+    import('../components/layouts/DefaultLayout')
+)
+
 const Login = React.lazy(() => import('../pages/Login'))
 
 export default function App() {
@@ -15,12 +19,10 @@ export default function App() {
             <Router>
                 <Suspense fallback={<div>Loading...</div>}>
                     <Switch>
-                        <Route path={ROUTES.Login} component={Login} />
+                        <Route path={ROUTES.LOGIN} component={Login} />
 
-                        <PrivateRoutesWrapper>
-                            <Route path={ROUTES.Home}>
-                                <div>Home page...(wip)</div>
-                            </Route>
+                        <PrivateRoutesWrapper defaultLayout={DefaultLayout}>
+                            <Route path={ROUTES.Home}>hello</Route>
                         </PrivateRoutesWrapper>
                     </Switch>
                 </Suspense>

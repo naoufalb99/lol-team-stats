@@ -2,7 +2,7 @@ import {} from './auth.types'
 
 const initialState = {
     token: undefined,
-    isAuthenticated: false
+    isAuthenticated: true
 }
 
 function reducer(state = initialState, action) {

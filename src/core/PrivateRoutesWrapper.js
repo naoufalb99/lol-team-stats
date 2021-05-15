@@ -4,14 +4,14 @@ import ROUTES from '../constants/routes'
 
 import { selectIsAuthenticated } from '../stacks/auth/auth.selectors'
 
-function PrivateRoutesWrapper({ children }) {
+function PrivateRoutesWrapper({ children, defaultLayout: DefaultLayout }) {
     const isAuthenticated = useSelector(selectIsAuthenticated)
 
     if (!isAuthenticated) {
-        return <Redirect to={ROUTES.Login} />
+        return <Redirect to={ROUTES.LOGIN} />
     }
 
-    return children
+    return <DefaultLayout>{children}</DefaultLayout>
 }
 
 export default PrivateRoutesWrapper
