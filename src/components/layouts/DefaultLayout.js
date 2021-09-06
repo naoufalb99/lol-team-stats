@@ -8,6 +8,7 @@ import {
     Typography,
 } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu'
+
 import Sidebar from '../Sidebar'
 
 const SIDEBAR_WIDTH = 280
@@ -16,10 +17,10 @@ const TOOLBAR_HEIGHT = 64
 const useStyles = makeStyles((theme) =>
     createStyles({
         root: {
-            paddingLeft: SIDEBAR_WIDTH
+            paddingLeft: SIDEBAR_WIDTH,
         },
         toolbar: {
-            height: TOOLBAR_HEIGHT
+            height: TOOLBAR_HEIGHT,
         },
         menuButton: {},
         title: {},

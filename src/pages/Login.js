@@ -9,10 +9,11 @@ import {
     TextField,
     Typography,
 } from '@material-ui/core'
-import gray from '@material-ui/core/colors/purple';
+import gray from '@material-ui/core/colors/purple'
 import { Field, Form } from 'react-final-form'
 import { useDispatch, useSelector } from 'react-redux'
 import * as yup from 'yup'
+
 import createValidator from '../helpers/createValidator'
 import { loginAttemptAction } from '../stacks/auth/auth.actions'
 import { selectLoaderById } from '../stacks/loaders/loaders.selectors'
@@ -104,7 +105,14 @@ export default function Login() {
                                         color="primary"
                                         fullWidth
                                     >
-                                        {isLoading ? <CircularProgress size={24} color={gray[50]} /> : 'Login in'}
+                                        {isLoading ? (
+                                            <CircularProgress
+                                                size={24}
+                                                color={gray[50]}
+                                            />
+                                        ) : (
+                                            'Login in'
+                                        )}
                                     </Button>
                                 </div>
                             </form>

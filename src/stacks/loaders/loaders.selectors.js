@@ -1,2 +1,1 @@
-
-export const selectLoaderById = (loaderId) => ({ loaders }) => loaders[loaderId] 
+export const selectLoaderById = (loaderId) => ({ loaders }) => loaders[loaderId]

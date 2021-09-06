@@ -1,10 +1,15 @@
-import { createStyles, List, ListItem, ListItemIcon, ListItemText, makeStyles } from '@material-ui/core'
-import { useState } from 'react'
+import {
+    createStyles,
+    List,
+    ListItem,
+    ListItemIcon,
+    ListItemText,
+    makeStyles,
+} from '@material-ui/core'
 import grey from '@material-ui/core/colors/grey'
+import React, { useState } from 'react'
 
-import InboxIcon from '@material-ui/icons/Inbox'
-import DraftsIcon from '@material-ui/icons/Drafts'
-
+import sidebarNavigation from '../constants/sidebar-navigation'
 import { ReactComponent as Logo } from '../images/logo.svg'
 
 const useStyles = makeStyles((theme) =>
@@ -36,6 +41,7 @@ export default function Sidebar({
     headerHeight,
     defaultCollapsed = false,
 }) {
+    // eslint-disable-next-line no-unused-vars
     const [collapsed, setCollapsed] = useState(defaultCollapsed)
     const classes = useStyles({ collapsed, width, headerHeight })
 
@@ -45,18 +51,14 @@ export default function Sidebar({
                 <Logo className={classes.logo} />
             </div>
             <List component="nav">
-                <ListItem button selected>
-                    <ListItemIcon>
-                        <InboxIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Inbox" />
-                </ListItem>
-                <ListItem button>
-                    <ListItemIcon>
-                        <DraftsIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Drafts" />
-                </ListItem>
+                {sidebarNavigation.map((item) => (
+                    <ListItem button selected>
+                        <ListItemIcon>
+                            {React.createElement(item.icon)}
+                        </ListItemIcon>
+                        <ListItemText primary={item.title} />
+                    </ListItem>
+                ))}
             </List>
         </div>
     )

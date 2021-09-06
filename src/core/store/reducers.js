@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux'
 
-import loadersReducer from '../../stacks/loaders/loaders.reducer'
 import authReducer from '../../stacks/auth/auth.reducer'
+import loadersReducer from '../../stacks/loaders/loaders.reducer'
 
 const reducers = {
     loaders: loadersReducer,

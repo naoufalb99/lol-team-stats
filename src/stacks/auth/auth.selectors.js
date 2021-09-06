@@ -1,1 +1,0 @@
-export const selectIsAuthenticated = ({ auth }) => auth.isAuthenticated

@@ -1,4 +1,4 @@
-import { setIn } from "final-form"
+import { setIn } from 'final-form'
 
 const createValidator = (schema) => async (values) => {
     if (typeof schema === 'function') {
